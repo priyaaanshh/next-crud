@@ -14,7 +14,7 @@ const Navbar = () => {
             </div>
             <div className='relative flex items-center justify-start gap-3 max-w-96 w-full h-[45px]'>
                 <div className='absolute top-0 w-full'>
-                    {/* <CommandDemo /> */}
+                    <CommandDemo />
                 </div>
             </div>
             <div className='flex items-center justify-start gap-3'>
