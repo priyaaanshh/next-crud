@@ -4,9 +4,17 @@ import React from 'react'
 import * as z from "zod";
 import { zodResolver } from "@hookform/resolvers/zod"
 import { UseFormReturn, useForm } from "react-hook-form"
-import { Form, FormControl, FormDescription, FormField, FormItem, FormLabel, FormMessage } from '@/components/ui/form';
+import { Form, FormControl, FormField, FormItem, FormMessage } from '@/components/ui/form';
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
+
+import {
+    Card,
+    CardContent,
+    CardDescription,
+    CardHeader,
+    CardTitle,
+} from "@/components/ui/card"
 
 
 
@@ -36,45 +44,56 @@ const Login = () => {
     });
     return (
         <div className='flex justify-center items-center h-full w-full'>
-            <Form {...form}>
-                <form onSubmit={form.handleSubmit(() => handleSubmit(form))} className="flex flex-col justify-center gap-2 w-full max-w-96 border shadow rounded py-4 px-2">
-                    <FormField
-                        control={form.control}
-                        name="username"
-                        render={({ field }) => (
-                            <FormItem>
-                                <FormControl>
-                                    <Input placeholder="username" {...field} />
-                                </FormControl>
-                                <FormMessage />
-                            </FormItem>
-                        )}
-                    /><FormField
-                        control={form.control}
-                        name="email"
-                        render={({ field }) => (
-                            <FormItem>
-                                <FormControl>
-                                    <Input placeholder="email" type='email' {...field} />
-                                </FormControl>
-                                <FormMessage />
-                            </FormItem>
-                        )}
-                    /><FormField
-                        control={form.control}
-                        name="password"
-                        render={({ field }) => (
-                            <FormItem>
-                                <FormControl>
-                                    <Input placeholder="password" type='password' autoComplete='on' {...field} />
-                                </FormControl>
-                                <FormMessage />
-                            </FormItem>
-                        )}
-                    />
-                    <Button type="submit">Submit</Button>
-                </form>
-            </Form>
+            <Card className='w-full max-w-96'>
+                <CardHeader>
+                    <CardTitle>Welcome back</CardTitle>
+                    <CardDescription>Login to access your account...</CardDescription>
+                </CardHeader>
+                <CardContent>
+                    <Form {...form}>
+                        <form onSubmit={form.handleSubmit(() => handleSubmit(form))} className="flex flex-col justify-center gap-3 w-full">
+                            <FormField
+                                control={form.control}
+                                name="username"
+                                render={({ field }) => (
+                                    <FormItem>
+                                        <FormControl>
+                                            <Input placeholder="username" {...field} />
+                                        </FormControl>
+                                        <FormMessage />
+                                    </FormItem>
+                                )}
+                            /><FormField
+                                control={form.control}
+                                name="email"
+                                render={({ field }) => (
+                                    <FormItem>
+                                        <FormControl>
+                                            <Input placeholder="email" type='email' {...field} />
+                                        </FormControl>
+                                        <FormMessage />
+                                    </FormItem>
+                                )}
+                            /><FormField
+                                control={form.control}
+                                name="password"
+                                render={({ field }) => (
+                                    <FormItem>
+                                        <FormControl>
+                                            <Input placeholder="password" type='password' autoComplete='on' {...field} />
+                                        </FormControl>
+                                        <FormMessage />
+                                    </FormItem>
+                                )}
+                            />
+                            <Button type="submit">Login</Button>
+                        </form>
+                    </Form>
+                </CardContent>
+
+            </Card>
+
+
         </div>
     )
 }
