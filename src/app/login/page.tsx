@@ -43,7 +43,7 @@ const Login = () => {
         }
     });
     return (
-        <div className='flex justify-center items-center h-full w-full'>
+        <div className='flex flex-col gap-10 justify-center items-center h-full w-full'>
             <Card className='w-full max-w-96'>
                 <CardHeader>
                     <CardTitle>Welcome back</CardTitle>
@@ -90,10 +90,7 @@ const Login = () => {
                         </form>
                     </Form>
                 </CardContent>
-
             </Card>
-
-
         </div>
     )
 }
